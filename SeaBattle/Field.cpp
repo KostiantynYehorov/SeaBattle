@@ -2,47 +2,37 @@
 
 Field::Field()
 {
-	pField_Player1 = new char* [FieldSize];
-	pField_Player2 = new char* [FieldSize];
+	_4_cells_ship = 1, _3_cells_ship = 2, _2_cells_ship = 3, _1_cell_ship = 4;
+	pField = new char* [FieldSize];
+	pField = new char* [FieldSize];
 
 	for (int i = 0; i < FieldSize; ++i) 
 	{ 
-		pField_Player1[i] = new char[FieldSize]; 
-		pField_Player2[i] = new char[FieldSize];
+		pField[i] = new char[FieldSize];
+		pField[i] = new char[FieldSize];
 	}
 
 	for (int i = 0; i < FieldSize; i++)
 	{
 		for (int j = 0; j < FieldSize; j++)
 		{
-			pField_Player1[i][j] = '~';
-			pField_Player2[i][j] = '~';
+			pField[i][j] = '~';
 		}
 	}
+
 }
 
 Field::~Field()
 {
-	for (int i = 0; i < FieldSize; ++i) { delete[] pField_Player1[i], pField_Player2[i]; }
-	delete[] pField_Player1, pField_Player2;
+	for (int i = 0; i < FieldSize; ++i) { delete[] pField[i]; }
+	delete[] pField;
 }
 
-void Field::FieldsOutput()
+void Field::FieldOutput()
 {
 	for (int i = 0; i < FieldSize; i++)
 	{
-		for (int j = 0; j < FieldSize; j++)
-		{
-			std::cout << pField_Player1[i][j] << " ";
-		}
-
-		std::cout << "\t\t";
-
-		for (int j = 0; j < FieldSize; j++)
-		{
-			std::cout << pField_Player2[i][j] << " ";
-		}
-
+		for (int j = 0; j < FieldSize; j++) { std::cout << pField[i][j] << " "; }
 		std::cout << "\n";
 	}
 }

@@ -6,10 +6,11 @@ public:
 	Field();
 	~Field();
 
-	void FieldsOutput();
-private:
-	char** pField_Player1;
-	char** pField_Player2;
+	void FieldOutput();
+protected:
+	char** pField;
 	const int FieldSize = 10;
+
+	int _4_cells_ship, _3_cells_ship, _2_cells_ship, _1_cell_ship;
 };
 

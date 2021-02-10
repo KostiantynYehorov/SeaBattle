@@ -4,7 +4,7 @@
 int main()
 {
 	Field obj;
-	obj.FieldsOutput();
+	obj.FieldOutput();
 
 	system("pause");
 	return 0;
